@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regent Media | Premium AI Lead Generation for Service Businesses</title>
+    <style>
+        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        :root {
+            --bg-color: #050505;
+            --surface-color: #111111;
+            --surface-accent: #1a1a1a;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-color: #ffffff;
+            --accent-hover: #e0e0e0;
+            --border-color: #222222;
+            --max-width: 1100px;
+            --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- REUSABLE COMPONENTS --- */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000000;
+            padding: 0.85rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .section-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        section {
+            padding: 8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 45px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .nav-links .nav-cta {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: var(--text-main);
+            color: #000;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 7rem;
+            padding-bottom: 8rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-banner {
+            width: 100%;
+            max-width: var(--max-width);
+            height: auto;
+            margin-top: 4rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            max-width: 850px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* --- PROCESS SECTION (5 STEPS) --- */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 6px;
+        }
+
+        .step-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- THE PROBLEM VS SOLUTION --- */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 6px;
+        }
+
+        .card.negative {
+            border-left: 3px solid #331111;
+        }
+
+        .card.positive {
+            border-left: 3px solid #113311;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card.negative ul li::before { content: "✕"; position: absolute; left: 0; color: #cc3333; }
+        .card.positive ul li::before { content: "✓"; position: absolute; left: 0; color: #33cc33; }
+
+        /* --- BREAKDOWN SECTION --- */
+        .breakdown {
+            background-color: var(--surface-color);
+        }
+
+        .breakdown-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .breakdown-content h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .breakdown-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            list-style: none;
+        }
+
+        .timeline-item {
+            padding-left: 2rem;
+            border-left: 1px solid var(--border-color);
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 9px;
+            height: 9px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- TEAM SECTION --- */
+        .team-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .team-image-container {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            background-color: var(--surface-color);
+            border-radius: 6px;
+        }
+
+        .team-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(20%);
+            border-radius: 4px;
+        }
+
+        .team-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .team-bio {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 6px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: #444;
+        }
+
+        .contact-card span {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-card a, .contact-card p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .footer-links button:hover {
+            color: var(--text-main);
+        }
+
+        /* --- MODALS FOR LEGAL PAGES --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 4rem 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal h2 { margin-bottom: 1.5rem; font-size: 2rem; }
+        .modal h3 { margin: 1.5rem 0 0.5rem 0; }
+        .modal p { color: var(--text-muted); margin-bottom: 1rem; }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 968px) {
+            section { padding: 5rem 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .framework-grid, .process-steps, .breakdown-layout, .team-layout, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .team-layout { order: 2; }
+            .team-image-container { max-width: 400px; margin: 0 auto; }
+            nav .container { padding: 0 1.5rem; }
+            .nav-links { display: none; }
+            footer .container { flex-direction: column; gap: 1.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="regent_media_logo.png" alt="Regent Media Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#process">Our System</a></li>
+                <li><a href="#about">Who We Are</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://tally.so/r/D4aDJE" target="_blank" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <span class="section-tag">AI-Driven Growth for Service Businesses</span>
+            <h1>We engineer qualification funnels that only deliver budget-ready buyers.</h1>
+            <p>Stop wasting time on tire-kickers and low-intent inquiries. We clean your digital presence, deploy smart infrastructure, and book pre-qualified leads straight to your calendar.</p>
+            <a href="https://tally.so/r/D4aDJE" target="_blank" class="btn">Book a Call</a>
+            <div>
+                <img src="regent_media_banner.png" alt="Regent Media Banner" class="hero-banner">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <span class="section-tag">The Industry Problem</span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Most agencies protect volume. We protect your time.</h2>
+            <p style="color: var(--text-muted); max-width: 700px;">Traditional marketers measure metrics that don't protect your schedule. Here's how we differ:</p>
+            
+            <div class="framework-grid">
+                <div class="card negative">
+                    <h3>The Standard Blueprint</h3>
+                    <ul>
+                        <li>Generic ad setups built for broad impressions</li>
+                        <li>Routing anyone with a pulse directly to your line</li>
+                        <li>Team members losing hours on unqualified leads</li>
+                        <li>Diminishing close rates and operational fatigue</li>
+                    </ul>
+                </div>
+                <div class="card positive">
+                    <h3>The Regent Media Engine</h3>
+                    <ul>
+                        <li>Hyper-targeted local asset optimizations</li>
+                        <li>Dynamic qualification and budget filtering upfront</li>
+                        <li>Strict verification protocol for intent and readiness</li>
+                        <li>High close rates built for sustainable team scaling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="container">
+            <span class="section-tag">The Conversion System</span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">A complete 5-step system engineered to turn strangers into booked, high-value clients.</h2>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h3>Branding & Visibility</h3>
+                    <p>We rebrand your online presence and put you on the map with professional positioning, SEO, and strategic visibility assets that attract the right eyes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h3>Traffic Generation</h3>
+                    <p>We deploy precise, high-intent advertising and organic strategies to drive qualified traffic from local customers actively seeking your services.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h3>ICP Qualification</h3>
+                    <p>Leads are rigorously screened against your Ideal Client Profile — location, budget, timeline, and service needs — before they ever reach you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <h3>Booking & Automation</h3>
+                    <p>Qualified leads are seamlessly booked into your calendar with automated reminders and 24/7 AI follow-up systems.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">05</div>
+                    <h3>Lead Nurturing</h3>
+                    <p>We don’t discard warm leads. ICP-matched prospects receive ongoing strategic follow-ups and reminders to maximize every campaign’s ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="breakdown">
+        <div class="container">
+            <div class="breakdown-layout">
+                <div class="breakdown-content">
+                    <span class="section-tag">Deep Dive</span>
+                    <h2>What happens on your Strategy Call?</h2>
+                    <p>This isn't a high-pressure sales pitch. It's an operational breakdown of your current pipeline to see if your service territory fits our qualification system.</p>
+                    <a href="https://tally.so/r/D4aDJE" target="_blank" class="btn">Book a Call</a>
+                </div>
+                <div>
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-title">1. Business Diagnostics</div>
+                            <div class="timeline-desc">We map out your current average job sizes, service areas, and customer acquisition setup.</div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-title">2. Bottleneck Isolation</div>
+                            <div class="timeline-desc">We identify exactly where friction exists — lead quality, drop-offs, or follow-up issues.</div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-title">3. Growth Architecture Proposal</div>
+                            <div class="timeline-desc">We custom-build a qualification roadmap and show you what high-quality leads look like in your market.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="team-layout">
+                <div class="team-image-container">
+                    <img src="Untitled design (1).png" alt="Favour Emuesiri" class="team-image">
+                </div>
+                <div class="team-info">
+                    <span class="section-tag">Behind the Agency</span>
+                    <h2>Favour Emuesiri</h2>
+                    <span class="team-subtitle">Founder & Owner, Regent Media</span>
+                    <p class="team-bio">Regent Media is run by Favour Emuesiri and a small, highly specialized team focused exclusively on delivering results for service businesses.</p>
+                    <p class="team-bio">We saw first-hand how classic marketing agencies flood service businesses with low-quality leads, forcing teams to waste time on bad fits. We built our systems to change that paradigm completely.</p>
+                    <a href="https://tally.so/r/D4aDJE" target="_blank" class="btn">Book a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-tag">Direct Lines</span>
+                <h2 style="font-size: 2.5rem;">Let's connect</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span>Email Direct</span>
+                    <a href="mailto:regentmedia.co@gmail.com">regentmedia.co@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <span>Instagram</span>
+                    <a href="https://instagram.com/regentmedia.co" target="_blank">@regentmedia.co</a>
+                </div>
+                <div class="contact-card">
+                    <span>Facebook Connect</span>
+                    <a href="https://www.facebook.com/share/18oBkwNdWF/?mibextid=wwXIfr" target="_blank">View Official Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Regent Media. All rights reserved.</p>
+            <div class="footer-links">
+                <button onclick="toggleModal('privacy-modal')">Privacy Policy</button>
+                <button onclick="toggleModal('terms-modal')">Terms of Service</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="toggleModal('privacy-modal')">&times;</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective Date:</strong> May 27, 2026</p>
+            <p>At Regent Media, accessible via our communication channels, protecting our clients' and prospective leads' operational data is a primary priority. This privacy documentation outlines the parameters of data parsing, ingestion, and application.</p>
+            <h3>1. Information Gathering</h3>
+            <p>We strictly limit collection to details provided explicitly via our qualification funnels and corporate touchpoints, including company scale, standard project values, emails, telephone numbers, and technical points of contact.</p>
+            <h3>2. Data Application</h3>
+            <p>Collected parameter matrices are deployed exclusively to optimize custom digital frameworks, execute targeted advertising models, and establish high-intent qualification logic.</p>
+            <h3>3. Third-Party Protections</h3>
+            <p>Regent Media does not rent, sell, or distribute systemic or personal lead databases to external corporate entities, brokers, or unrelated third parties.</p>
+        </div>
+    </div>
+
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="toggleModal('terms-modal')">&times;</button>
+            <h2>Terms of Service</h2>
+            <p><strong>Effective Date:</strong> May 27, 2026</p>
+            <p>Welcome to Regent Media. By engaging with this platform, our consultative processes, or booking a Strategy Call, you explicitly accept these governed operational conditions.</p>
+            <h3>1. Scope of Optimization</h3>
+            <p>Regent Media provisions AI configuration, strategy, local channel restructuring, and automated lead assessment structures exclusively for professional service-based businesses.</p>
+            <h3>2. Strategy Call Engagements</h3>
+            <p>The Strategy Call is an open strategic assessment session. Financial estimates, geographic boundaries, and process bottlenecks discussed remain highly confidential under default professional discretion rules.</p>
+            <h3>3. External Platform Dependencies</h3>
+            <p>Our verification funnels route to third-party scheduling components (Calendly). Users acknowledge that scheduling functionality is handled natively according to the infrastructure rules of those external tools.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            } else {
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
+</body>
+</html>
