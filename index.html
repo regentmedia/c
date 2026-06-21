@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="regent_media_logo.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://regentmedia.co/">
+    <meta property="og:title" content="Regent Media">
+    <meta property="og:description" content="Performance-driven marketing engines designed to scale revenue.">
+    <meta property="og:image" content="https://regentmedia.co/regent_media_banner.png">
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://regentmedia.co/">
-<meta property="og:title" content="Regent Media">
-<meta property="og:description" content="Performance-driven marketing engines designed to scale revenue.">
-<meta property="og:image" content="https://regentmedia.co/regent_media_banner.png">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://regentmedia.co/">
-<meta property="twitter:title" content="Regent Media">
-<meta property="twitter:description" content="Performance-driven marketing engines designed to scale revenue.">
-<meta property="twitter:image" content="https://regentmedia.co/regent_media_banner.png">
-    <!-- Favicon basics (modern browsers + fallback) -->
-<link rel="icon" type="image/png" sizes="32x32" href="/regent_media_logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/regent_media_logo.png"> 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-
-<!-- <link rel="icon" type="image/svg+xml" href="/regent_media_logo.svg"> -->
-
-<link rel="manifest" href="/site.webmanifest">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://regentmedia.co/">
+    <meta property="twitter:title" content="Regent Media">
+    <meta property="twitter:description" content="Performance-driven marketing engines designed to scale revenue.">
+    <meta property="twitter:image" content="https://regentmedia.co/regent_media_banner.png">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/regent_media_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/regent_media_logo.png"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <title>Regent Media | Premium AI Lead Generation for Service Businesses</title>
+    
     <style>
         /* --- DESIGN SYSTEM & CSS VARIABLES --- */
         :root {
@@ -86,6 +83,17 @@
         .btn:hover {
             background-color: var(--accent-hover);
             transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-main);
+            color: #000;
         }
 
         .section-tag {
@@ -188,7 +196,43 @@
             margin: 0 auto 2.5rem auto;
         }
 
-        /* --- PROCESS SECTION (5 STEPS) --- */
+        /* --- THE PROBLEM VS SOLUTION & REVENUE MODEL --- */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 6px;
+        }
+
+        .card.negative { border-left: 3px solid #331111; }
+        .card.positive { border-left: 3px solid #113311; }
+        
+        .card.premium {
+            background-color: var(--text-main);
+            color: #000;
+            border: none;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul { list-style: none; }
+        .card ul li { margin-bottom: 1rem; color: var(--text-muted); position: relative; padding-left: 1.5rem; }
+        .card.premium ul li { color: #222; font-weight: 500; }
+        .card.negative ul li::before { content: "✕"; position: absolute; left: 0; color: #cc3333; }
+        .card.positive ul li::before { content: "✓"; position: absolute; left: 0; color: #33cc33; }
+        .card.premium ul li::before { content: "✓"; position: absolute; left: 0; color: #000; font-weight: bold; }
+
+        /* --- PROCESS SECTION --- */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -217,265 +261,184 @@
             margin-bottom: 1.5rem;
         }
 
-        .step h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
+        .step h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+        .step p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .step p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- THE PROBLEM VS SOLUTION --- */
-        .framework-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 3rem;
-            border-radius: 6px;
-        }
-
-        .card.negative {
-            border-left: 3px solid #331111;
-        }
-
-        .card.positive {
-            border-left: 3px solid #113311;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card ul {
-            list-style: none;
-        }
-
-        .card ul li {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .card.negative ul li::before { content: "✕"; position: absolute; left: 0; color: #cc3333; }
-        .card.positive ul li::before { content: "✓"; position: absolute; left: 0; color: #33cc33; }
-
-        /* --- BREAKDOWN SECTION --- */
-        .breakdown {
-            background-color: var(--surface-color);
-        }
-
-        .breakdown-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .breakdown-content h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .breakdown-content p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .timeline {
-            list-style: none;
-        }
-
-        .timeline-item {
-            padding-left: 2rem;
-            border-left: 1px solid var(--border-color);
-            position: relative;
-            padding-bottom: 2.5rem;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 5px;
-            width: 9px;
-            height: 9px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-        }
-
-        .timeline-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- TEAM SECTION --- */
-        .team-layout {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .team-image-container {
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            background-color: var(--surface-color);
-            border-radius: 6px;
-        }
-
-        .team-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(20%);
-            border-radius: 4px;
-        }
-
-        .team-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
-
-        .team-bio {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- CONTACT SECTION --- */
-        .contact-grid {
+        /* --- VETTING CRITERIA --- */
+        .vetting-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
         }
 
-        .contact-card {
-            background-color: var(--surface-color);
+        .vetting-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .vetting-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* --- BREAKDOWN SECTION --- */
+        .breakdown { background-color: var(--surface-color); }
+        .breakdown-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .breakdown-content h2 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1.5rem; }
+        .breakdown-content p { color: var(--text-muted); margin-bottom: 2rem; }
+        
+        .timeline { list-style: none; }
+        .timeline-item { padding-left: 2rem; border-left: 1px solid var(--border-color); position: relative; padding-bottom: 2.5rem; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ""; position: absolute; left: -5px; top: 5px; width: 9px; height: 9px; background-color: var(--accent-color); border-radius: 50%; }
+        .timeline-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .timeline-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- URGENCY BANNER --- */
+        .urgency-banner {
+            background-color: var(--surface-accent);
             border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 6px;
+            padding: 4rem 2rem;
             text-align: center;
-            transition: border-color 0.2s;
+            border-radius: 6px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-card:hover {
+        .urgency-banner::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--text-main);
+        }
+
+        .urgency-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .urgency-banner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .pulse-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .pulse-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 51, 51, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 51, 51, 0); }
+        }
+
+        /* --- FAQ SECTION --- */
+        .faq-grid {
+            max-width: 800px;
+            margin: 3rem auto 0 auto;
+        }
+
+        details {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        details[open] {
             border-color: #444;
         }
 
-        .contact-card span {
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-            letter-spacing: 1px;
-        }
-
-        .contact-card a, .contact-card p {
+        summary {
+            padding: 1.5rem;
             font-size: 1.1rem;
             font-weight: 500;
-            word-break: break-all;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 4rem 0;
-            background-color: var(--bg-color);
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        footer .container {
+            cursor: pointer;
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links button {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-family: inherit;
-            font-size: inherit;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .footer-links button:hover {
-            color: var(--text-main);
-        }
-
-        /* --- MODALS FOR LEGAL PAGES --- */
-        .modal {
+        summary::-webkit-details-marker {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            overflow-y: auto;
-            padding: 4rem 1rem;
         }
 
-        .modal-content {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 3rem;
-            border-radius: 6px;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--text-muted);
+        summary::after {
+            content: '+';
             font-size: 1.5rem;
-            cursor: pointer;
+            color: var(--text-muted);
+            transition: transform 0.2s;
         }
 
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* --- TEAM & CONTACT --- */
+        .team-layout { display: grid; grid-template-columns: 400px 1fr; gap: 4rem; align-items: center; }
+        .team-image-container { border: 1px solid var(--border-color); padding: 1rem; background-color: var(--surface-color); border-radius: 6px; }
+        .team-image { width: 100%; height: auto; display: block; filter: grayscale(20%); border-radius: 4px; }
+        .team-info h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .team-subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; display: block; }
+        .team-bio { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .contact-card { background-color: var(--surface-color); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 6px; text-align: center; transition: border-color 0.2s; }
+        .contact-card:hover { border-color: #444; }
+        .contact-card span { display: block; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 1px; }
+        .contact-card a, .contact-card p { font-size: 1.1rem; font-weight: 500; word-break: break-all; }
+
+        /* --- FOOTER --- */
+        footer { padding: 4rem 0; background-color: var(--bg-color); border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); }
+        footer .container { display: flex; justify-content: space-between; align-items: center; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links button { background: none; border: none; color: var(--text-muted); font-family: inherit; font-size: inherit; cursor: pointer; transition: color 0.2s; }
+        .footer-links button:hover { color: var(--text-main); }
+
+        /* --- MODALS --- */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 2000; overflow-y: auto; padding: 4rem 1rem; }
+        .modal-content { background-color: var(--surface-color); border: 1px solid var(--border-color); max-width: 700px; margin: 0 auto; padding: 3rem; border-radius: 6px; position: relative; }
+        .close-modal { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; }
         .modal h2 { margin-bottom: 1.5rem; font-size: 2rem; }
         .modal h3 { margin: 1.5rem 0 0.5rem 0; }
         .modal p { color: var(--text-muted); margin-bottom: 1rem; }
@@ -484,10 +447,7 @@
         @media (max-width: 968px) {
             section { padding: 5rem 0; }
             .hero h1 { font-size: 2.5rem; }
-            .framework-grid, .process-steps, .breakdown-layout, .team-layout, .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
+            .framework-grid, .process-steps, .breakdown-layout, .team-layout, .contact-grid, .vetting-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             .team-layout { order: 2; }
             .team-image-container { max-width: 400px; margin: 0 auto; }
             nav .container { padding: 0 1.5rem; }
@@ -504,9 +464,10 @@
                 <img src="regent_media_logo.png" alt="Regent Media Logo">
             </a>
             <ul class="nav-links">
+                <li><a href="#performance">Revenue Model</a></li>
                 <li><a href="#process">Our System</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#about">Who We Are</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="https://tally.so/r/D4aDJE" target="_blank" class="nav-cta">Book a Call</a></li>
             </ul>
         </div>
@@ -553,6 +514,37 @@
         </div>
     </section>
 
+    <section id="performance" style="background-color: var(--surface-color);">
+        <div class="container">
+            <span class="section-tag">The No-Risk Mechanism</span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Zero retainers. You only pay for qualified results.</h2>
+            <p style="color: var(--text-muted); max-width: 700px;">We completely eliminate the financial risk of traditional marketing. Our model guarantees that you are paying for tangible revenue opportunities—not empty promises.</p>
+            
+            <div class="framework-grid">
+                <div class="card negative">
+                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">The Risk is Yours</span>
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Traditional Retainers</h3>
+                    <ul>
+                        <li>High upfront monthly retainer fees</li>
+                        <li>Paying for vanity metrics and "clicks"</li>
+                        <li>Agency gets paid regardless of your revenue</li>
+                        <li>Long-term, binding contracts</li>
+                    </ul>
+                </div>
+                <div class="card premium">
+                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #444; font-weight: 600; display: block; margin-bottom: 0.5rem;">The Risk is Ours</span>
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: #000;">Pay-Per-Acquisition</h3>
+                    <ul>
+                        <li>Zero upfront monthly retainer fees</li>
+                        <li>Strictly pay-per-lead or pay-per-acquisition</li>
+                        <li>Our margins depend entirely on your closed revenue</li>
+                        <li>Month-to-month, performance-driven partnership</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="process">
         <div class="container">
             <span class="section-tag">The Conversion System</span>
@@ -585,6 +577,27 @@
                     <p>We don’t discard warm leads. ICP-matched prospects receive ongoing strategic follow-ups and reminders to maximize every campaign’s ROI.</p>
                 </div>
             </div>
+
+            <div style="margin-top: 6rem;">
+                <span class="section-tag">Qualification Check</span>
+                <h2 style="font-size: 2rem;">Who we partner with.</h2>
+                <p style="color: var(--text-muted); max-width: 700px; margin-bottom: 1rem;">An agency that takes every client is desperate. Because we front the cost and effort of building the infrastructure, we are highly selective about who we work with. Your business must meet these criteria:</p>
+                
+                <div class="vetting-grid">
+                    <div class="vetting-item">
+                        <h3>01. Infrastructure Ready</h3>
+                        <p>You must have the team and operational capacity to handle an influx of 15-30 additional high-quality estimates or jobs per month without breaking your fulfillment process.</p>
+                    </div>
+                    <div class="vetting-item">
+                        <h3>02. High Average Ticket</h3>
+                        <p>Our sophisticated, multi-step qualification funnels are built for high-value services. The math works best when your average customer value is substantial.</p>
+                    </div>
+                    <div class="vetting-item">
+                        <h3>03. Transparent Operations</h3>
+                        <p>We require partners who are decisive, communicative, and willing to share honest feedback on lead quality so we can continuously optimize the AI filtering.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -613,6 +626,55 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="urgency-banner">
+                <div class="pulse-container">
+                    <div class="pulse-dot"></div>
+                    <span class="pulse-text">2 Spots Remaining This Month</span>
+                </div>
+                <h2>Strictly limited onboarding capacity.</h2>
+                <p>Because we build bespoke, market-specific infrastructure for every single client on a performance basis, we only onboard a maximum of <strong>5 new partners per month</strong> to ensure uncompromising quality and results.</p>
+                <a href="https://tally.so/r/D4aDJE" target="_blank" class="btn btn-outline">Check Market Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background-color: var(--bg-color);">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-tag">Clarity</span>
+                <h2 style="font-size: 2.5rem;">Common Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <details>
+                    <summary>What industries do you currently work with?</summary>
+                    <div class="faq-answer">
+                        Currently, we are exclusively partnering with <strong>solar companies</strong>. Because our performance-based systems require heavy upfront infrastructure build-outs and deep market research, spots fill up exceptionally fast. We plan to open our systems to other high-ticket service industries soon.
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>How fast do leads start hitting our system?</summary>
+                    <div class="faq-answer">
+                        Once you are successfully onboarded, our team takes about 7-10 days to build, test, and deploy your custom infrastructure. You can typically expect to see qualified, booked appointments hitting your calendar within the first 14 days of launch.
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>What exactly constitutes a "qualified" lead or acquisition?</summary>
+                    <div class="faq-answer">
+                        A lead is only considered qualified if they explicitly meet your Ideal Client Profile (ICP). This means they are located in your target service area, have demonstrated intent for your services, and have passed our preliminary budget and timeline filters before they are passed to you.
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>Is there a long-term contract lock-in?</summary>
+                    <div class="faq-answer">
+                        No. We believe in earning your business every single month. Because we operate purely on a performance basis, our incentives are perfectly aligned with yours. You are never locked into a long-term retainer trap.
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -669,7 +731,6 @@
         </div>
     </footer>
 
-    <!-- Modals -->
     <div id="privacy-modal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="toggleModal('privacy-modal')">&times;</button>
