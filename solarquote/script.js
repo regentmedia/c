@@ -2,7 +2,7 @@
         const INSPECTIONS_PER_INSTALLATION = 4;
         const WORKING_DAYS_PER_MONTH = 25;
         const CALENDLY_BASE_URL = "https://calendly.com/regentmedia-co/growthreviewcall";
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwzcGoJQJdnyQzf-hxmLhsj-xp8jGOwWsitZAA7i9fkUUNkdCdaYfVuqUMQPO8fOZGh4A/exec";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1cJSCCFDU4nVp9OCT2BIVdCH9q7pn1A8cE71IAs9ZI_Cq2RlEevxeW25nTRzwJ5KMGA/exec";
 
 
         const states = [
